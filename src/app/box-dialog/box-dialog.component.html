@@ -1,0 +1,16 @@
+
+<h1 mat-dialog-title>Add Restaurant</h1>
+<div mat-dialog-content>
+  <form> 
+     <label for="Name"> Restaurant Name</label>
+       <input (input)="setName($event)"  [value]="name" type="text">
+    <label for="Drink">Drink</label>
+      <input (input)="setDrink($event)"  [value]="drink" type="text">
+    <label for="Review">Review</label>
+      <input (input)="setReview($event)"  [value]="review" type="text">
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button type="button" (click)="addRow()">Save</button> 
+  <button (click)="closeDialog()" mat-button>Close</button>
+</div>

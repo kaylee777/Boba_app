@@ -1,26 +1,28 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatTable } from '@angular/material/table';
- 
+import { AppService, Boba } from './app.service';
+import BoxDialogComponent  from './box-dialog/box-dialog.component';
 
 @Component({
 selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  
 })
+
 export class AppComponent {
   title = 'Boba-App';
-  data: Array<any>;
+  
 
-constructor() {
-    this.data = [
-        { RestaurantName: 'Tao Cha', Drink: 'Matcha Milk tea Latte', Review: '5/5' },
-        { RestaurantName: 'Teapioca', Drink: 'Brown Sugar Milk Tea', Review: '2/5' },
-        { RestaurantName: 'Feng Cha', Drink: 'Matcha Milk tea Latte', Review: '3/5' },
-       
-    ];
+constructor(public readonly dialog: MatDialog, public service: AppService) {
+   }
+   
+openDialog(): void {
+  this.dialog.open(BoxDialogComponent);
 }
-
-
-
+deleteRow(rowId:number){
+  this.service.deleteDataRow(rowId)
 }
+editRow(boba: Boba){
+this.dialog.open(BoxDialogComponent, {data: boba})
+}}
