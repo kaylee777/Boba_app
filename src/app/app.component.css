@@ -35,10 +35,11 @@ table.center {
 
 h1 {
   text-align: center;
-
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  margin-top: 5%;
 }
 
-.button-add-row {
-  margin-left: 67.5%;
-  margin-top: 1%;
+.add-row {
+  margin-left: 67.3%;
 }

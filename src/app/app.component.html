@@ -1,22 +1,28 @@
+<!-- The HTML template that declares what renders on the page-->
+<!--router-outlet used to insert the component-->
 <router-outlet>
   <h1> {{title}}</h1>
-  <button mat-raised-button class="button-add-row" (click)="openDialog()">Add Restaurant</button>
+  <div class="add-row">
+    <button mat-raised-button (click)="openDialog()">Add Restaurant</button>
+  </div>
   <table class="center">
     <thead>
       <link rel="stylesheet" href="app.component.css">
       <tr>
+        <!--Headers for Table Data-->
         <th>Restaurant Name</th>
         <th>Drink</th>
         <th>Review</th>
       </tr>
     </thead>
     <tbody>
+      <!--Used to traverse over an array object and display the data in the UI-->
       <tr *ngFor="let info of service.data">
         <td>{{info.RestaurantName}}</td>
         <td>{{info.Drink}}</td>
         <td>{{info.Review}}
-          <button (click)="editRow(info)"> Edit</button>
-          <button (click)="deleteRow(info.id)"> Delete</button>
+          <button mat-raised-button class="editbtn" (click)="editRow(info)"> Edit</button>
+          <button mat-raised-button (click)="deleteRow(info.id)"> Delete</button>
         </td>
       </tr>
     </tbody>

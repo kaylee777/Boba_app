@@ -35,3 +35,4 @@ export class AppService {
     this.data.push(boba)
   }
 }
+//services are used to share a single piece of code across multiple components
