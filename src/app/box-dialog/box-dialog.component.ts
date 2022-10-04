@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { AppComponent } from '../app.component';
 import { AppService, Boba } from '../app.service';
 import { Input } from '@angular/core';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'app-box-dialog',
@@ -14,48 +15,50 @@ export default class BoxDialogComponent implements OnInit {
   name: string = ""
   drink: string = ""
   review: string = ""
-  
+
   constructor(
     private dialogRef: MatDialogRef<BoxDialogComponent>,
     private service: AppService,
     @Inject(MAT_DIALOG_DATA) public data?: Boba
-  ) {}
-  
-  ngOnInit(): void {
-  console.log(this.data)
-  if (this.data !=null ) {
-    this.name= this.data.RestaurantName
-    this.drink= this.data.Drink
-    this.review= this.data.Review
+  ) { }
 
-  }
+  ngOnInit(): void {
+    console.log(this.data)
+    if (this.data != null) {
+      this.name = this.data.RestaurantName
+      this.drink = this.data.Drink
+      this.review = this.data.Review
+    }
   }
 
   closeDialog(): void {
     this.dialogRef.close()
   }
 
-  addRow(){
-    this.service.create ({
-      id: 5,
+  handleSave() {
+    this.closeDialog()
+    const info: Boba = {
+      id: this.data?.id || uuid(),
       RestaurantName: this.name,
       Drink: this.drink,
       Review: this.review
-    })
-  }
-  editRow(Info:Boba){
-    Boba.splice(0,2)
-  }
-  
+    }
 
-  setName(event: Event){
+    if (this.data?.id) {
+      return this.service.onRowEdit(info)
+    }
+
+    this.service.create(info)
+  }
+
+  setName(event: Event) {
     this.name = (event.target as HTMLInputElement).value
   }
 
-  setDrink(event: Event){
+  setDrink(event: Event) {
     this.drink = (event.target as HTMLInputElement).value
   }
-  setReview(event: Event){
+  setReview(event: Event) {
     this.review = (event.target as HTMLInputElement).value
   }
 }

@@ -1,6 +1,6 @@
 <router-outlet>
-   <h1> {{title}}</h1>
-    <button mat-raised-button class="button-add-row"(click)="openDialog()">Add Restaurant</button>
+  <h1> {{title}}</h1>
+  <button mat-raised-button class="button-add-row" (click)="openDialog()">Add Restaurant</button>
   <table class="center">
     <thead>
       <link rel="stylesheet" href="app.component.css">
@@ -15,9 +15,10 @@
         <td>{{info.RestaurantName}}</td>
         <td>{{info.Drink}}</td>
         <td>{{info.Review}}
-          <button (click)="editRow(info)"> Edit</button> 
-          <button (click)="deleteRow(info.id)"> Delete</button></td>
+          <button (click)="editRow(info)"> Edit</button>
+          <button (click)="deleteRow(info.id)"> Delete</button>
+        </td>
       </tr>
     </tbody>
-  </table> 
+  </table>
 </router-outlet>
