@@ -1,0 +1,26 @@
+.title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.modal{
+   width: 500px;
+padding: 0px 20px 20px 20px;
+text-align: center;
+
+}
+.rest-name, .drink-name, .review-dialog{
+ text-align: left;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ padding-bottom: 5%;
+ width:90%
+ 
+}
+label{
+    width: 150px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 2%;
+}
+button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
