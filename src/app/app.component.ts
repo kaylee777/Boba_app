@@ -16,9 +16,11 @@ export class AppComponent {
   openDialog(): void {
     this.dialog.open(BoxDialogComponent);
   }
+  //calling on service to delete a row
   deleteRow(rowId: string) {
     this.service.deleteDataRow(rowId)
   }
+  //opening BDC to edit the row with the injected data
   editRow(boba: Boba) {
     //data being injected into the child component 
     this.dialog.open(BoxDialogComponent, { data: boba })
