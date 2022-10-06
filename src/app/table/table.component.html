@@ -1,0 +1,24 @@
+<table class="center">
+    <thead>
+      <tr>
+        <!--Headers for Table Data-->
+        <th>Restaurant</th>
+        <th>Drink</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--Used to traverse over an array object and display the data in the UI-->
+      <tr *ngFor="let info of service.data">
+        <td>{{info.RestaurantName}}</td>
+        <td>{{info.Drink}}</td>
+        <td>{{info.Review}}
+          <button class="editbtn" (click)="editRow(info)"> <i class="fa-solid fa-pencil"></i></button>
+          <button class="deletebtn" (click)="deleteRow(info.id)"> <i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="add-row">
+    <button class="butn1" (click)="openDialog()"><i class="fa-solid fa-plus"></i> Add Restaurant</button>
+  </div>

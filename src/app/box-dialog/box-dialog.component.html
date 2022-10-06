@@ -1,17 +1,21 @@
-<div class="modal"> <h1 class="title" mat-dialog-title>Add Restaurant</h1>
-<div  mat-dialog-content>
-  <form>
-    <div class="rest-name">
-    <label  for="Name"> Restaurant Name:</label>
-    <input (input)="setName($event)" [value]="name" type="text"></div>
-    <div class="drink-name"><label for="Drink">Drink:</label>
-    <input (input)="setDrink($event)" [value]="drink" type="text"></div>
-    <div class="review-dialog"><label for="Review">Review:</label>
-    <input (input)="setReview($event)" [value]="review" type="text"> </div>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button type="button" (click)="handleSave()">Save</button>
-  <button (click)="closeDialog()" mat-button>Close</button>
-</div>
+  <div class="modal">
+    <h1 class="title" mat-dialog-title>Add Restaurant</h1>
+  <div mat-dialog-content>
+    <form>
+      <div class="rest-name">
+        <label for="Name"> Restaurant Name:</label>
+        <input (input)="setName($event)" [value]="name" type="text">
+      </div>
+      <div class="drink-name"><label for="Drink">Drink:</label>
+        <input (input)="setDrink($event)" [value]="drink" type="text">
+      </div>
+      <div class="review-dialog"><label for="Review">Review:</label>
+        <input (input)="setReview($event)" [value]="review" type="text">
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button class="save-btn" type="button" (click)="handleSave()">Save</button>
+    <button class="close-btn" (click)="closeDialog()" mat-button>Close</button>
+  </div>
 </div>

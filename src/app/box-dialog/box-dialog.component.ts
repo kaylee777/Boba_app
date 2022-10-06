@@ -53,7 +53,7 @@ export default class BoxDialogComponent implements OnInit {
     }
     this.service.create(info)
   }
-//used event binding to handle the input by the user
+  //used event binding to handle the input by the user
   setName(event: Event) {
     this.name = (event.target as HTMLInputElement).value
   }

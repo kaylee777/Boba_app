@@ -1,82 +1,21 @@
-table {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  width: 50%;
+body {
+  margin: 0;
+  padding: 0;
 }
-
-th {
-  font-size: 200%;
+.header {
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  padding: 30px 0;
+  width: 100%;
   text-align: center;
-  padding: 15px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
-
-td {
-  font-size: larger;
-  text-align: center;
-  padding: 15px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 25px;
-
+.overlay {
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
 }
-
-table,
-th,
-td {
-  border: 1px solid;
-  border-width: .5px;
-  border-collapse: collapse;
-
-}
-
-tr:hover {
-  background-color: pink;
-
-
-}
-
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-  width:70%;
-}
-
-h1 {
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 50px;
-  color:aliceblue
-  
-}
-
-.add-row {
-  margin-left: 67.3%;
-}
-
-tr {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
-}
-
-.butn1 {
-  margin-left: 45px;
-  margin-top: 15px;
-  background-color: rgba(255, 255,255, 0.5);
-  border: 2px solid;
-  text-align:center;
-  font-size: large;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.butn1 i{
-  color:black;
-  /* background-color: transparent; */
-  border: 2px solid;
-  margin-right: 5px;
-  border-radius: 100px;
-  height: 20px;
-  width: 20px;
-}
-
 .container {
   width: 1100px;
   margin: 0px auto;
@@ -91,48 +30,20 @@ tr {
   background-image: url("src/app/images/istockphoto-1142539780-612x612.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size:cover;
-  position:absolute;
+  background-size: cover;
+  position: absolute;
   /* opacity: .75; */
 
 }
-.center{
-  background-color: rgba(255, 255,255, 0.5);
-  
+
+.center {
+  background-color: rgba(255, 255, 255, 0.5);
+
 }
-.overlay {
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  background-color: rgba(0, 0, 0,0.4);
-  position: absolute;
-}
-.header{
-  border-bottom: 2px solid #fff;
-  position:absolute;
-  padding: 30px 0;
-  width: 100%;
+h1 {
   text-align: center;
-}
-.editbtn {
-  color:black;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: 2px solid;
-  border-radius: 100px;
-  margin-right: 5px;
-}
-.deletebtn{
-  color: black;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: 2px solid;
-  border-radius: 100px;
-  margin-right: 5px;
-}
-body{
-margin:0;
-padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  color: #F5F5F5;
+
 }
