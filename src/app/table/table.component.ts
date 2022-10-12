@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppService, Boba } from '../app.service';
-import BoxDialogComponent from '../box-dialog/box-dialog.component';
+import { BoxDialogComponent } from '../box-dialog/box-dialog.component';
 
 @Component({
   selector: 'app-table',

@@ -12,7 +12,7 @@ import { v4 as uuid } from 'uuid';
   styleUrls: ['./box-dialog.component.css']
 })
 //allows BDC to be used in other modules in the application.
-export default class BoxDialogComponent implements OnInit {
+export class BoxDialogComponent implements OnInit {
   name: string = ""
   drink: string = ""
   review: string = ""
@@ -40,8 +40,6 @@ export default class BoxDialogComponent implements OnInit {
   handleSave() {
     this.closeDialog()
     const info: Boba = {
-      //universal unique identifier to generate an id.
-      // '?' used to say the id won't always be defined.
       id: this.data?.id || uuid(),
       RestaurantName: this.name,
       Drink: this.drink,
