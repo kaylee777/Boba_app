@@ -11,6 +11,9 @@ export class Boba {
 //allows AppService to be used in other modules in the app.
 //filler data for application to demo.
 export class AppService {
+  currentRow(currentRow: any) {
+    throw new Error('Method not implemented.');
+  }
   data: Boba[] = [
     new Boba("1", "Tao Cha", "Matcha Milk tea Latte", "5/5"),
     new Boba("2", "Teapioca", "Brown Sugar Milk tea", "2/5"),
@@ -21,20 +24,20 @@ export class AppService {
   //mapping through the existing data and if any item in the existing data matches 
   //the right Id it is overwriting that position in the array with the new data passed through info
   //then it is assigning that new array to data.
-  onRowEdit(info: Boba) {
-    const updatedData = this.data.map((bobaItem) => {
-      if (info.id === bobaItem.id) {
-        return info
+  onRowEdit(newRow: Boba) {
+    const updatedData = this.data.map((oldRow) => {
+      if (newRow.id === oldRow.id) {
+        return newRow
       }
-        return bobaItem
+        return oldRow
       })
-    this.data = updatedData
+     this.data = updatedData
   }
-  deleteDataRow(id: string) {
-    this.data = this.data.filter((bobaItem) => bobaItem.id !== id);
+  deleteDataRow(id: string) { 
+    this.data = this.data.filter((currentRow) => currentRow.id !== id);
   }
   create(boba: Boba) {
-    this.data.push(boba)
+    this.data.push(boba) 
   }
 }
 //services are used to share a single piece of code across multiple components

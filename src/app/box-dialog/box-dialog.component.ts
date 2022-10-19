@@ -13,6 +13,10 @@ import { v4 as uuid } from 'uuid';
 })
 //allows BDC to be used in other modules in the application.
 export class BoxDialogComponent implements OnInit {
+  create: any;
+  id: string | undefined;
+  dialogRefSpy(dialogRefSpy: any) {
+  }
   name: string = ""
   drink: string = ""
   review: string = ""
@@ -20,8 +24,7 @@ export class BoxDialogComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<BoxDialogComponent>,
     private service: AppService,
-    @Inject(MAT_DIALOG_DATA) public data?: Boba
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data?: Boba) { }
   // place to put the code that we need to be executed as soon as the class is instantiated.
   //if this data is not null, we want to edit, the current row. 
   ngOnInit(): void {
@@ -45,7 +48,6 @@ export class BoxDialogComponent implements OnInit {
       Drink: this.drink,
       Review: this.review
     }
-    //if statement to point the app to the correct method for creating a new row or editing a current row.
     if (this.data?.id) {
       return this.service.onRowEdit(info)
     }

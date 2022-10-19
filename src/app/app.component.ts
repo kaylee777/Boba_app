@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Boba-App';
-  // used to inject dependencies into the component class, creating a new instance.
+
   constructor() { }
 
 }
